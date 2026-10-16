@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhargavi Mudumbha | Software Developer</title>
+    <meta name="description"
+        content="Bhargavi Mudumbha, Software Developer in Hyderabad. Python full stack and backend development with Django, FastAPI, React, PostgreSQL and AWS.">
+    <meta property="og:title" content="Bhargavi Mudumbha | Software Developer">
+    <meta property="og:description"
+        content="Python full stack and backend developer. Projects: NEXORA, COGNEXA, Climate Vision.">
+    <meta property="og:image" content="https://m-bhargavi8.github.io/assets/profile.jpg">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2358a6ff'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%230d1117'>BM</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Apply the saved theme before the page paints, so it doesn't flash.
+        try {
+            const saved = localStorage.getItem("theme");
+            if (saved) document.documentElement.dataset.theme = saved;
+        } catch (e) { /* storage blocked: fall back to the system setting */ }
+    </script>
+</head>
+
+<body>
+
+    <nav>
+        <a href="#top" class="brand">BM</a>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <button type="button" class="theme-btn" aria-label="Switch colour theme">🌙</button>
+    </nav>
+
+    <main class="container" id="top">
+
+        <header class="hero">
+            <img src="assets/profile.jpg" alt="Bhargavi Mudumbha" class="profile-pic" width="150" height="150">
+            <h1>Bhargavi Mudumbha</h1>
+            <p class="tagline">Software Developer · Python Full Stack &amp; Backend Development</p>
+            <p class="location">Hyderabad, India</p>
+            <div class="hero-links">
+                <a href="assets/Bhargavi_Mudumbha_Resume.pdf" class="btn" download>Download Resume</a>
+                <a href="https://github.com/M-Bhargavi8" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </header>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>
+                I'm a Software Developer at TrustBrick Reality Fintech Pvt. Ltd., building a production Django and
+                React platform with REST APIs, MySQL, real-time chat, WebRTC calling and AWS deployment. As a
+                freelance full-stack developer, I built and launched the HairShalo e-commerce website end to end.
+            </p>
+            <p>
+                I hold a B.Tech in Artificial Intelligence &amp; Data Science, and I apply machine learning and
+                retrieval-augmented generation (RAG) in working software. I care about code that is tested,
+                secure and easy to explain.
+            </p>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="role">
+                <div class="role-head">
+                    <h3>Software Developer · <span>TrustBrick Reality Fintech Pvt. Ltd.</span></h3>
+                    <span class="date">Jun 2026 – Present</span>
+                </div>
+                <ul>
+                    <li>Primary developer: built full-stack features and an affiliate commission engine with
+                        Django REST Framework, React, MySQL and AWS.</li>
+                    <li>Extended live chat (Django Channels, WebSockets, Redis) and WebRTC calling with call queues,
+                        routing and recording.</li>
+                    <li>Resolved a WebSocket handshake timeout that broke voice calls across networks, restoring
+                        cross-network calling.</li>
+                    <li>Implemented email logging, email OTP, WhatsApp lead tracking, TOTP 2FA, IP allowlisting and
+                        admin audit trails.</li>
+                    <li>Fixed a robots.txt rule that made Google render pages empty, restoring search indexing.</li>
+                </ul>
+            </div>
+
+            <div class="role">
+                <div class="role-head">
+                    <h3>Freelance Full Stack Web Developer · <span>HairShalo</span></h3>
+                    <span class="date">Aug 2026 – Present</span>
+                </div>
+                <ul>
+                    <li>Lead developer: designed, built and launched the complete e-commerce website for a hair and
+                        wig business (<a href="https://hairshalo.com" target="_blank" rel="noopener">hairshalo.com</a>).</li>
+                    <li>Built a FastAPI and PostgreSQL backend with JWT auth, Razorpay payments, coupons and
+                        inventory, deployed with Docker.</li>
+                    <li>Developed a responsive HTML5, CSS3 and JavaScript front end with collection filtering,
+                        search and product galleries.</li>
+                </ul>
+            </div>
+
+            <div class="role">
+                <div class="role-head">
+                    <h3>AI &amp; Full Stack Intern · <span>Fixity EDX</span></h3>
+                    <span class="date">Sep 2025 – Feb 2026</span>
+                </div>
+                <ul>
+                    <li>Completed a six-month full-stack and applied ML program: React, Node.js, Express, MongoDB,
+                        scikit-learn and TensorFlow.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+
+                <article class="project-card">
+                    <h3>NEXORA</h3>
+                    <p class="project-sub">AI Document Q&amp;A Workspace</p>
+                    <p>Upload PDF, DOCX or XLSX files and ask questions. Answers stream in real time and cite the
+                        passages they came from.</p>
+                    <ul>
+                        <li>Async FastAPI backend with pgvector retrieval and a Claude/Gemini model gateway</li>
+                        <li>Argon2id auth, cookie sessions, CSRF checks and rate limiting</li>
+                        <li>492 backend and 156 frontend tests</li>
+                    </ul>
+                    <div class="tags"><span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span><span>React</span><span>TypeScript</span></div>
+                    <a href="https://github.com/M-Bhargavi8/Nexora" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>COGNEXA</h3>
+                    <p class="project-sub">Cognitive Gaming Platform</p>
+                    <p>11 browser games. The 8 Brain Lab games each measure one cognitive skill and feed the
+                        player's skill profile and leaderboards.</p>
+                    <ul>
+                        <li>Token-authenticated REST API with role-based access and rate limiting</li>
+                        <li>Server-side game state, so crafted requests can't fake a win</li>
+                        <li>210 pytest tests</li>
+                    </ul>
+                    <div class="tags"><span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>pytest</span></div>
+                    <a href="https://github.com/M-Bhargavi8/COGNEXA" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+                </article>
+
+                <article class="project-card">
+                    <h3>Climate Vision</h3>
+                    <p class="project-sub">CNN Weather Classifier</p>
+                    <p>My final-year B.Tech project, revisited. It classifies weather photos as Cloudy, Rain, Shine
+                        or Sunrise, served through a Streamlit app.</p>
+                    <ul>
+                        <li>Fixed a softmax/loss mismatch in the original model</li>
+                        <li>92.9% accuracy on a held-out test set</li>
+                        <li>Shrank the model from 156 MB to 5.5 MB</li>
+                    </ul>
+                    <div class="tags"><span>TensorFlow/Keras</span><span>OpenCV</span><span>Streamlit</span></div>
+                    <a href="https://github.com/M-Bhargavi8/ClimateVision" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skill-group">
+                <h3>Languages</h3>
+                <div class="skills"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML5</span><span>CSS3</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Backend &amp; APIs</h3>
+                <div class="skills"><span>Django</span><span>Django REST Framework</span><span>FastAPI</span><span>Flask</span><span>SQLAlchemy</span><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>WebSockets</span><span>WebRTC</span><span>JWT</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Frontend</h3>
+                <div class="skills"><span>React.js</span><span>Tailwind CSS</span><span>Bootstrap</span><span>Vite</span><span>Responsive Web Design</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Databases</h3>
+                <div class="skills"><span>MySQL</span><span>PostgreSQL</span><span>pgvector</span><span>SQLite</span><span>MongoDB</span><span>Redis</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>Cloud &amp; Tools</h3>
+                <div class="skills"><span>AWS (Elastic Beanstalk, RDS, S3)</span><span>Docker</span><span>Git &amp; GitHub</span><span>pytest</span><span>Vitest</span></div>
+            </div>
+            <div class="skill-group">
+                <h3>AI, ML &amp; Data</h3>
+                <div class="skills"><span>TensorFlow/Keras</span><span>scikit-learn</span><span>OpenCV</span><span>Deep Learning</span><span>NLP</span><span>RAG</span><span>LLM APIs</span><span>Pandas</span><span>NumPy</span><span>Tableau</span><span>Power BI</span></div>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="role-head">
+                <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+                <span class="date">May 2026</span>
+            </div>
+            <p class="muted">Megha Institute of Engineering and Technology for Women, Hyderabad · CGPA 8.2/10</p>
+
+            <h2 class="sub-heading">Certifications</h2>
+            <ul>
+                <li>Full Stack Data Science with Generative AI, Agentic AI &amp; MERN Stack: Fixity EDX</li>
+                <li>Use Generative AI for Software Development: IBM</li>
+                <li>Digital Skills: Artificial Intelligence: Accenture</li>
+                <li>Data Analytics Job Simulation: Deloitte Australia (Forage), Feb 2026</li>
+                <li>Basics of Python: Infosys</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>I'm open to Software Developer, Python Full Stack and Backend Developer roles.</p>
+            <div class="hero-links">
+                <a href="mailto:bhargavimudumbha@gmail.com" class="btn">Email me</a>
+                <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/M-Bhargavi8" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+            </div>
+            <p class="muted">bhargavimudumbha@gmail.com</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Bhargavi Mudumbha</p>
+    </footer>
+
+    <script>
+        const root = document.documentElement;
+        const button = document.querySelector(".theme-btn");
+
+        function currentTheme() {
+            if (root.dataset.theme) return root.dataset.theme;
+            return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        }
+
+        function showIcon() {
+            // The icon shows the theme you'd switch TO.
+            button.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
+        }
+
+        button.addEventListener("click", () => {
+            const next = currentTheme() === "dark" ? "light" : "dark";
+            root.dataset.theme = next;
+            try { localStorage.setItem("theme", next); } catch (e) { /* not saved; still switches */ }
+            showIcon();
+        });
+
+        showIcon();
+    </script>
+
+</body>
+
+</html>
