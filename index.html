@@ -134,7 +134,17 @@
 
         <!-- ───────────────────────── HERO ───────────────────────── -->
         <section id="hero" class="surface-ink hero" data-nav-tone="light">
-            <canvas id="field" aria-hidden="true"></canvas>
+            <!-- Backdrop. The point-cloud canvas is always there. To put a
+                 video behind it, drop the file in assets/ and add
+                 data-video="assets/hero.mp4" to the <section> above — main.js
+                 then fades it in (desktop only, never on reduced motion or a
+                 metered connection). The scrim keeps the type legible either
+                 way. -->
+            <div class="hero-media" aria-hidden="true">
+                <canvas id="field"></canvas>
+                <video id="hero-video" muted loop playsinline preload="none"></video>
+                <div class="scrim"></div>
+            </div>
 
             <div class="shell hero-grid">
                 <div class="hero-text">
@@ -577,6 +587,8 @@
         </section>
 
     </main>
+
+    <div class="grain" aria-hidden="true"></div>
 
     <script src="main.js" type="module"></script>
 </body>

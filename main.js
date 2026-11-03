@@ -316,6 +316,50 @@ function heroField() {
 heroField();
 
 
+/* ---------- Hero background video --------------------------------------- */
+/* Optional. Drop a file at assets/hero.mp4 (or .webm) and it fades in over
+   the point cloud; with no file the page is exactly as it was. Skipped on
+   reduced motion, on a metered connection, and on phones, where it is a
+   large download for a backdrop nobody came to watch. */
+
+function heroVideo() {
+    const video = $("#hero-video");
+    if (!video) return;
+
+    // Opt in by putting data-video="assets/hero.mp4" on the hero section.
+    const src = $("#hero").dataset.video;
+    const conn = navigator.connection;
+
+    if (!src
+        || reduced.matches
+        || innerWidth < 760
+        || (conn && (conn.saveData || /(^|-)2g$/.test(conn.effectiveType || "")))) {
+        video.remove();
+        return;
+    }
+
+    video.src = src;
+
+    video.addEventListener("canplay", () => {
+        video.classList.add("ready");
+        video.play().catch(() => { /* autoplay refused: the still frame stays */ });
+    }, { once: true });
+
+    // No file, or an unplayable one — leave the point cloud alone.
+    video.addEventListener("error", () => video.remove(), { once: true });
+
+    // Don't decode frames for a hero nobody is looking at.
+    new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting && !document.hidden) video.play().catch(() => { });
+        else video.pause();
+    }, { threshold: 0 }).observe(video);
+
+    video.load();
+}
+
+heroVideo();
+
+
 /* ---------- Scroll work -------------------------------------------------- */
 
 let ticking = false;
