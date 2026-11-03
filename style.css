@@ -911,7 +911,14 @@ html:not(.js) .skills-index {
     border-top: 1px solid var(--rule);
 }
 
-.role:last-child {
+/* `.role` sets display:grid, and an author display rule beats the user-agent
+   `[hidden] { display: none }` — so say it explicitly. */
+.role[hidden] {
+    display: none;
+}
+
+/* The closing rule goes on the container: the last child may be hidden. */
+.timeline {
     border-bottom: 1px solid var(--rule);
 }
 
@@ -999,7 +1006,12 @@ html:not(.js) .skills-index {
     transition: background-color .35s;
 }
 
-.project:last-child {
+.project[hidden] {
+    display: none;
+}
+
+/* Same here, and `order` means the last child isn't the last one shown. */
+.work-list {
     border-bottom: 1px solid var(--rule);
 }
 
