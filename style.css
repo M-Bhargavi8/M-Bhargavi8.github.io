@@ -53,6 +53,13 @@ a {
     color: var(--accent);
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 /* ---------------------------------------------------------------- nav */
 
 nav {
@@ -77,12 +84,6 @@ nav {
     display: flex;
     gap: 28px;
     margin: 0 auto;
-    overflow-x: auto; /* on phones the links scroll sideways instead of overflowing */
-    scrollbar-width: none;
-}
-
-.nav-links::-webkit-scrollbar {
-    display: none;
 }
 
 .nav-links a {
@@ -94,6 +95,19 @@ nav {
 
 .nav-links a:hover {
     color: var(--text);
+}
+
+.nav-toggle {
+    display: none; /* shown below 700px, where the links no longer fit on one row */
+    flex-shrink: 0;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
 }
 
 .theme-btn {
@@ -302,6 +316,35 @@ footer {
     color: var(--muted);
 }
 
+@media (max-width: 700px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 8px 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, .2);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 12px 24px;
+    }
+}
+
 @media (max-width: 600px) {
     nav {
         padding: 10px 16px;
@@ -309,5 +352,15 @@ footer {
 
     section {
         padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    body {
+        transition: none;
     }
 }
