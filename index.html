@@ -8,6 +8,8 @@
     <meta name="description"
         content="Bhargavi Mudumbha, Software Developer in Hyderabad. Python full stack and backend development with Django, FastAPI, React, PostgreSQL and AWS.">
     <link rel="canonical" href="https://m-bhargavi8.github.io/">
+    <meta name="theme-color" content="#14110f">
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://m-bhargavi8.github.io/">
     <meta property="og:site_name" content="Bhargavi Mudumbha">
@@ -23,9 +25,18 @@
     <meta name="twitter:description"
         content="Python full stack and backend developer. Projects: NEXORA, COGNEXA, Climate Vision.">
     <meta name="twitter:image" content="https://m-bhargavi8.github.io/assets/og-card.png">
+
     <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%2358a6ff'/><text x='50' y='68' font-size='52' text-anchor='middle' font-family='Arial' font-weight='bold' fill='%230d1117'>BM</text></svg>">
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23b64b2e'/><text x='50' y='70' font-size='54' text-anchor='middle' font-family='Georgia,serif' fill='%23f4f0ea'>B</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..700,0..100,0..1;1,9..144,300..700,0..100,0..1&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
     <link rel="stylesheet" href="style.css">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -48,273 +59,526 @@
             "@type": "CollegeOrUniversity",
             "name": "Megha Institute of Engineering and Technology for Women"
         },
-        "knowsAbout": ["Python", "Django", "FastAPI", "React", "PostgreSQL", "AWS", "Machine Learning"],
+        "knowsAbout": ["Python", "Django", "FastAPI", "React", "PostgreSQL", "AWS", "Machine Learning",
+            "Retrieval-Augmented Generation", "Data Analytics"],
         "sameAs": [
             "https://github.com/M-Bhargavi8",
             "https://www.linkedin.com/in/bhargavi-mudumbha"
+        ],
+        "subjectOf": [
+            {
+                "@type": "SoftwareSourceCode",
+                "name": "NEXORA",
+                "description": "AI document question-and-answer workspace with streaming, cited answers.",
+                "codeRepository": "https://github.com/M-Bhargavi8/Nexora",
+                "programmingLanguage": ["Python", "TypeScript"]
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "name": "COGNEXA",
+                "description": "Cognitive gaming platform with server-authoritative game state and skill profiling.",
+                "codeRepository": "https://github.com/M-Bhargavi8/COGNEXA",
+                "programmingLanguage": "Python"
+            },
+            {
+                "@type": "SoftwareSourceCode",
+                "name": "Climate Vision",
+                "description": "Convolutional neural network that classifies weather photographs.",
+                "codeRepository": "https://github.com/M-Bhargavi8/ClimateVision",
+                "programmingLanguage": "Python"
+            }
         ]
     }
     </script>
+
     <script>
-        // Apply the saved theme before the page paints, so it doesn't flash.
+        // Set the theme before first paint so it never flashes.
+        document.documentElement.classList.add("js");
         try {
             const saved = localStorage.getItem("theme");
             if (saved) document.documentElement.dataset.theme = saved;
+            const aud = localStorage.getItem("audience");
+            if (aud) document.documentElement.dataset.audience = aud;
         } catch (e) { /* storage blocked: fall back to the system setting */ }
     </script>
 </head>
 
 <body>
 
-    <nav>
-        <a href="#top" class="brand">BM</a>
+    <a class="skip" href="#hero">Skip to content</a>
+
+    <nav id="nav">
+        <a href="#hero" class="brand"><span>Bhargavi</span> Mudumbha</a>
+
         <div class="nav-links" id="nav-links">
             <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
-            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#work">Work</a>
+            <a href="#moments">Credentials</a>
             <a href="#contact">Contact</a>
         </div>
-        <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false"
-            aria-controls="nav-links">☰</button>
-        <button type="button" class="theme-btn" aria-label="Switch colour theme">🌙</button>
+
+        <div class="nav-actions">
+            <button type="button" class="icon-btn theme-btn" aria-label="Switch colour theme">
+                <span aria-hidden="true" class="theme-icon"></span>
+            </button>
+            <button type="button" class="icon-btn nav-toggle" aria-label="Menu" aria-expanded="false"
+                aria-controls="nav-links">
+                <span aria-hidden="true" class="bars"></span>
+            </button>
+        </div>
     </nav>
 
-    <main class="container" id="top">
+    <main>
 
-        <header class="hero">
-            <img src="assets/profile.jpg" alt="Bhargavi Mudumbha" class="profile-pic" width="150" height="150">
-            <h1>Bhargavi Mudumbha</h1>
-            <p class="tagline">Software Developer · Python Full Stack &amp; Backend Development</p>
-            <p class="location">Hyderabad, India</p>
-            <div class="hero-links">
-                <a href="assets/Bhargavi_Mudumbha_Resume.pdf" class="btn" download>Download Resume</a>
-                <a href="https://github.com/M-Bhargavi8" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-        </header>
+        <!-- ───────────────────────── HERO ───────────────────────── -->
+        <section id="hero" class="surface-ink hero" data-nav-tone="light">
+            <canvas id="field" aria-hidden="true"></canvas>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I'm a Software Developer at TrustBrick Realty Fintech Pvt. Ltd., building a production Django and
-                React platform with REST APIs, MySQL, real-time chat, WebRTC calling and AWS deployment. As a
-                freelance full-stack developer, I built and launched the HairShalo e-commerce website end to end.
-            </p>
-            <p>
-                I hold a B.Tech in Artificial Intelligence &amp; Data Science, and I apply machine learning and
-                retrieval-augmented generation (RAG) in working software. I care about code that is tested,
-                secure and easy to explain.
-            </p>
-        </section>
+            <div class="shell hero-grid">
+                <div class="hero-text">
+                    <p class="micro reveal">// Software Developer</p>
 
-        <section id="experience">
-            <h2>Experience</h2>
+                    <h1 class="display">
+                        <span class="line"><span class="word">Bhargavi</span></span>
+                        <span class="line"><em class="word">Mudumbha</em></span>
+                    </h1>
 
-            <div class="role">
-                <div class="role-head">
-                    <h3>Software Developer · <span>TrustBrick Realty Fintech Pvt. Ltd.</span></h3>
-                    <span class="date">Jun 2026 – Present</span>
-                </div>
-                <ul>
-                    <li>Primary developer: built full-stack features and an affiliate commission engine with
-                        Django REST Framework, React, MySQL and AWS.</li>
-                    <li>Extended live chat (Django Channels, WebSockets, Redis) and WebRTC calling with call queues,
-                        routing and recording.</li>
-                    <li>Resolved a WebSocket handshake timeout that broke voice calls across networks, restoring
-                        cross-network calling.</li>
-                    <li>Implemented email logging, email OTP, WhatsApp lead tracking, TOTP 2FA, IP allowlisting and
-                        admin audit trails.</li>
-                    <li>Fixed a robots.txt rule that made Google render pages empty, restoring search indexing.</li>
-                </ul>
-            </div>
+                    <p class="lead reveal">
+                        I build <em>production</em> systems — Django and FastAPI backends, React front ends,
+                        and the machine learning that sits behind them.
+                    </p>
 
-            <div class="role">
-                <div class="role-head">
-                    <h3>Freelance Full Stack Web Developer · <span>HairShalo</span></h3>
-                    <span class="date">Aug 2026 – Present · Part-time</span>
-                </div>
-                <ul>
-                    <li>Lead developer: designed, built and launched the complete e-commerce website for a hair and
-                        wig business (<a href="https://hairshalo.com" target="_blank" rel="noopener">hairshalo.com</a>).</li>
-                    <li>Built a FastAPI and PostgreSQL backend with JWT auth, Razorpay payments, coupons and
-                        inventory, deployed with Docker.</li>
-                    <li>Developed a responsive HTML5, CSS3 and JavaScript front end with collection filtering,
-                        search and product galleries.</li>
-                </ul>
-            </div>
-
-            <div class="role">
-                <div class="role-head">
-                    <h3>AI &amp; Full Stack Intern · <span>Fixity EDX</span></h3>
-                    <span class="date">Dec 2025 – Jan 2026</span>
-                </div>
-                <ul>
-                    <li>Completed full-stack and applied ML training: React, Node.js, Express, MongoDB,
-                        scikit-learn and TensorFlow.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-
-                <article class="project-card">
-                    <h3>NEXORA</h3>
-                    <p class="project-sub">AI Document Q&amp;A Workspace</p>
-                    <p>Upload PDF, DOCX or XLSX files and ask questions. Answers stream in real time and cite the
-                        passages they came from.</p>
-                    <ul>
-                        <li>Async FastAPI backend with pgvector retrieval and a Claude/Gemini model gateway</li>
-                        <li>Argon2id auth, cookie sessions, CSRF checks and rate limiting</li>
-                        <li>492 backend and 156 frontend tests</li>
+                    <ul class="meta-row reveal">
+                        <li>Hyderabad, India</li>
+                        <li>Available for work</li>
+                        <li>B.Tech, AI &amp; Data Science</li>
                     </ul>
-                    <div class="tags"><span>FastAPI</span><span>PostgreSQL</span><span>pgvector</span><span>React</span><span>TypeScript</span></div>
-                    <a href="https://github.com/M-Bhargavi8/Nexora" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-                </article>
 
-                <article class="project-card">
-                    <h3>COGNEXA</h3>
-                    <p class="project-sub">Cognitive Gaming Platform</p>
-                    <p>11 browser games. The 8 Brain Lab games each measure one cognitive skill and feed the
-                        player's skill profile and leaderboards.</p>
-                    <ul>
-                        <li>Token-authenticated REST API with role-based access and rate limiting</li>
-                        <li>Server-side game state, so crafted requests can't fake a win</li>
-                        <li>210 pytest tests</li>
+                    <div class="actions reveal">
+                        <a href="assets/Bhargavi_Mudumbha_Resume.pdf" class="btn btn-solid" download>
+                            Download résumé
+                        </a>
+                        <a href="https://github.com/M-Bhargavi8" class="btn" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn" target="_blank"
+                            rel="noopener">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audience switcher: reorders the work section. Never hides anything. -->
+            <div class="shell switcher-wrap">
+                <div class="switcher reveal" role="group" aria-label="Order the work section for">
+                    <span class="micro">I'm here as</span>
+                    <button type="button" data-audience="recruiter" aria-pressed="false">Recruiter</button>
+                    <button type="button" data-audience="engineer" aria-pressed="false">Engineer</button>
+                    <button type="button" data-audience="curious" aria-pressed="false">Just curious</button>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#about" aria-label="Scroll to About">
+                <span class="micro">Scroll</span>
+                <span class="cue-line" aria-hidden="true"></span>
+            </a>
+        </section>
+
+        <!-- ───────────────────────── ABOUT ───────────────────────── -->
+        <section id="about" class="surface-paper" data-nav-tone="dark">
+            <div class="shell">
+                <p class="section-no reveal">(01) — About</p>
+
+                <h2 class="statement">
+                    <span class="line"><span class="word">I care about systems</span></span>
+                    <span class="line"><span class="word">that <em>hold up</em> — tested,</span></span>
+                    <span class="line"><span class="word">secured, and simple</span></span>
+                    <span class="line"><span class="word">enough to explain.</span></span>
+                </h2>
+
+                <div class="about-grid">
+                    <figure class="portrait reveal">
+                        <img src="assets/profile.jpg" alt="Bhargavi Mudumbha" width="640" height="800"
+                            loading="lazy" decoding="async">
+                        <figcaption class="micro">Hyderabad, India</figcaption>
+                    </figure>
+
+                    <div class="about-copy">
+                        <p class="reveal">
+                            I'm a Software Developer at <strong>TrustBrick Realty Fintech</strong>, where I'm the
+                            primary developer on a production Django and React platform — REST APIs, MySQL,
+                            real-time chat, WebRTC calling and AWS deployment. Alongside that I work as a freelance
+                            full-stack developer; I built and launched the HairShalo e-commerce site end to end.
+                        </p>
+                        <p class="reveal">
+                            My degree is in Artificial Intelligence &amp; Data Science, and I use it: retrieval-augmented
+                            generation in NEXORA, a convolutional network in Climate Vision, and analytics work
+                            through a Deloitte Australia job simulation. I'd rather ship something small that is
+                            correct and well covered than something large I can't vouch for.
+                        </p>
+
+                        <dl class="stats">
+                            <div class="reveal">
+                                <dt class="micro">Tests written</dt>
+                                <dd><span class="count" data-to="858">0</span></dd>
+                            </div>
+                            <div class="reveal">
+                                <dt class="micro">Model accuracy</dt>
+                                <dd><span class="count" data-to="92.9" data-dp="1">0</span><span class="unit">%</span></dd>
+                            </div>
+                            <div class="reveal">
+                                <dt class="micro">Model shrunk by</dt>
+                                <dd><span class="count" data-to="28">0</span><span class="unit">×</span></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────────── SKILLS ───────────────────────── -->
+        <section id="skills" class="surface-cream" data-nav-tone="dark">
+            <div class="shell">
+                <p class="section-no reveal">(02) — What I work with</p>
+                <h2 class="heading reveal">The stack, <em>honestly</em> labelled.</h2>
+
+                <div class="skills-index reveal">
+                    <ul class="skill-cats" role="tablist" aria-label="Skill categories">
+                        <li><button type="button" role="tab" aria-selected="true" aria-controls="cat-lang"
+                                id="tab-lang">Languages</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-backend"
+                                id="tab-backend">Backend &amp; APIs</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-frontend"
+                                id="tab-frontend">Frontend</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-data"
+                                id="tab-data">Databases</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-ml"
+                                id="tab-ml">AI, ML &amp; Data</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-bi"
+                                id="tab-bi">Analytics &amp; BI</button></li>
+                        <li><button type="button" role="tab" aria-selected="false" aria-controls="cat-cloud"
+                                id="tab-cloud">Cloud &amp; Tooling</button></li>
                     </ul>
-                    <div class="tags"><span>Python</span><span>Flask</span><span>SQLAlchemy</span><span>pytest</span></div>
-                    <a href="https://github.com/M-Bhargavi8/COGNEXA" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-                </article>
 
-                <article class="project-card">
-                    <h3>Climate Vision</h3>
-                    <p class="project-sub">CNN Weather Classifier</p>
-                    <p>My final-year B.Tech project, revisited. It classifies weather photos as Cloudy, Rain, Shine
-                        or Sunrise, served through a Streamlit app.</p>
-                    <ul>
-                        <li>Fixed a softmax/loss mismatch in the original model</li>
-                        <li>92.9% accuracy on a held-out test set</li>
-                        <li>Shrank the model from 156 MB to 5.5 MB</li>
+                    <div class="skill-panes">
+                        <ul class="skill-pane is-active" id="cat-lang" role="tabpanel" aria-labelledby="tab-lang">
+                            <li><span>Python</span><span class="note">Primary language — Django, FastAPI, Flask, ML</span></li>
+                            <li><span>JavaScript</span><span class="note">Browser behaviour and Node services</span></li>
+                            <li><span>TypeScript</span><span class="note">NEXORA's React front end</span></li>
+                            <li><span>SQL</span><span class="note">Schema design, joins, indexing</span></li>
+                            <li><span>HTML5</span><span class="note">Semantic, accessible markup</span></li>
+                            <li><span>CSS3</span><span class="note">Layout, responsive design, no framework needed</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-backend" role="tabpanel" aria-labelledby="tab-backend" hidden>
+                            <li><span>Django</span><span class="note">Production platform at TrustBrick</span></li>
+                            <li><span>Django REST Framework</span><span class="note">APIs behind the React client</span></li>
+                            <li><span>FastAPI</span><span class="note">NEXORA and the HairShalo backend</span></li>
+                            <li><span>Flask</span><span class="note">COGNEXA's REST API</span></li>
+                            <li><span>SQLAlchemy</span><span class="note">ORM and migrations</span></li>
+                            <li><span>Node.js &amp; Express</span><span class="note">Training-stack work at Fixity EDX</span></li>
+                            <li><span>WebSockets</span><span class="note">Django Channels live chat with Redis</span></li>
+                            <li><span>WebRTC</span><span class="note">Calling with queues, routing and recording</span></li>
+                            <li><span>JWT &amp; TOTP</span><span class="note">Auth, email OTP, two-factor</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-frontend" role="tabpanel" aria-labelledby="tab-frontend" hidden>
+                            <li><span>React</span><span class="note">TrustBrick platform and NEXORA</span></li>
+                            <li><span>Vite</span><span class="note">Build tooling and dev server</span></li>
+                            <li><span>Tailwind CSS</span><span class="note">Utility-first styling</span></li>
+                            <li><span>Bootstrap</span><span class="note">Earlier project work</span></li>
+                            <li><span>Responsive design</span><span class="note">Phone-first, tested on real viewports</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-data" role="tabpanel" aria-labelledby="tab-data" hidden>
+                            <li><span>PostgreSQL</span><span class="note">NEXORA and HairShalo</span></li>
+                            <li><span>pgvector</span><span class="note">Embedding storage and retrieval</span></li>
+                            <li><span>MySQL</span><span class="note">TrustBrick's production database</span></li>
+                            <li><span>MongoDB</span><span class="note">Document storage, MERN work</span></li>
+                            <li><span>SQLite</span><span class="note">Local development and tests</span></li>
+                            <li><span>Redis</span><span class="note">Channel layer and caching</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-ml" role="tabpanel" aria-labelledby="tab-ml" hidden>
+                            <li><span>TensorFlow / Keras</span><span class="note">Climate Vision's CNN</span></li>
+                            <li><span>scikit-learn</span><span class="note">Classical models and evaluation</span></li>
+                            <li><span>OpenCV</span><span class="note">Image preprocessing</span></li>
+                            <li><span>RAG</span><span class="note">Chunking, embedding, citation in NEXORA</span></li>
+                            <li><span>LLM APIs</span><span class="note">Claude and Gemini through one gateway</span></li>
+                            <li><span>NLP</span><span class="note">Text extraction and parsing</span></li>
+                            <li><span>Pandas &amp; NumPy</span><span class="note">Data wrangling and analysis</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-bi" role="tabpanel" aria-labelledby="tab-bi" hidden>
+                            <li><span>Tableau</span><span class="note">Dashboards and visual analysis</span></li>
+                            <li><span>Power BI</span><span class="note">Reporting and data modelling</span></li>
+                            <li><span>Pandas</span><span class="note">Cleaning and aggregation</span></li>
+                            <li><span>SQL analytics</span><span class="note">Window functions, aggregation</span></li>
+                        </ul>
+
+                        <ul class="skill-pane" id="cat-cloud" role="tabpanel" aria-labelledby="tab-cloud" hidden>
+                            <li><span>AWS</span><span class="note">Elastic Beanstalk, RDS, S3</span></li>
+                            <li><span>Docker</span><span class="note">HairShalo's deployment</span></li>
+                            <li><span>Git &amp; GitHub</span><span class="note">Branching, review, Pages</span></li>
+                            <li><span>pytest</span><span class="note">492 backend tests in NEXORA, 210 in COGNEXA</span></li>
+                            <li><span>Vitest</span><span class="note">156 frontend tests in NEXORA</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────────── EXPERIENCE ───────────────────────── -->
+        <section id="experience" class="surface-cream alt" data-nav-tone="dark">
+            <div class="shell">
+                <p class="section-no reveal">(03) — Where I've worked</p>
+                <h2 class="heading reveal">Four rooms, <em>one habit</em>: ship it tested.</h2>
+
+                <div class="timeline">
+                    <span class="rail" aria-hidden="true"><i></i></span>
+
+                    <article class="role reveal">
+                        <p class="years">Jun 2026 — Now</p>
+                        <div class="role-body">
+                            <h3>Software Developer</h3>
+                            <p class="org">TrustBrick Realty Fintech Pvt. Ltd.</p>
+                            <ul>
+                                <li>Primary developer: full-stack features and an affiliate commission engine with
+                                    Django REST Framework, React, MySQL and AWS.</li>
+                                <li>Extended live chat (Django Channels, WebSockets, Redis) and WebRTC calling with
+                                    call queues, routing and recording.</li>
+                                <li>Resolved a WebSocket handshake timeout that broke voice calls across networks,
+                                    restoring cross-network calling.</li>
+                                <li>Implemented email logging, email OTP, WhatsApp lead tracking, TOTP two-factor,
+                                    IP allowlisting and admin audit trails.</li>
+                                <li>Fixed a robots.txt rule that made Google render pages empty, restoring search
+                                    indexing.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="role reveal">
+                        <p class="years">Aug 2026 — Now<span class="tag">Part-time</span></p>
+                        <div class="role-body">
+                            <h3>Freelance Full Stack Web Developer</h3>
+                            <p class="org">HairShalo</p>
+                            <ul>
+                                <li>Lead developer: designed, built and launched the complete e-commerce site for a
+                                    hair and wig business —
+                                    <a href="https://hairshalo.com" target="_blank" rel="noopener">hairshalo.com</a>.</li>
+                                <li>FastAPI and PostgreSQL backend with JWT auth, Razorpay payments, coupons and
+                                    inventory, deployed with Docker.</li>
+                                <li>Responsive HTML5, CSS3 and JavaScript front end with collection filtering,
+                                    search and product galleries.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="role reveal">
+                        <p class="years">Dec 2025 — Jan 2026</p>
+                        <div class="role-body">
+                            <h3>AI &amp; Full Stack Intern</h3>
+                            <p class="org">Fixity EDX</p>
+                            <ul>
+                                <li>Full-stack and applied machine learning training: React, Node.js, Express,
+                                    MongoDB, scikit-learn and TensorFlow.</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- TODO (Bhargavi): confirm the dates and the course summary for Pentagon Space,
+                         then replace the two placeholders below. -->
+                    <article class="role reveal">
+                        <p class="years" data-todo>Dates to confirm</p>
+                        <div class="role-body">
+                            <h3>Python Full Stack Development <span class="tag">Training</span></h3>
+                            <p class="org">Pentagon Space</p>
+                            <ul>
+                                <li data-todo>Course summary to confirm — what the programme covered and what you
+                                    built in it.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────────── WORK ───────────────────────── -->
+        <section id="work" class="surface-ink" data-nav-tone="light">
+            <div class="shell">
+                <p class="section-no reveal">(04) — Selected work</p>
+                <h2 class="heading reveal">Four things I <em>built</em> and can defend.</h2>
+
+                <div class="work-list">
+
+                    <article class="project reveal" style="--accent:#c8653f;--o-rec:1;--o-eng:1;--o-cur:2">
+                        <p class="pindex" aria-hidden="true">01</p>
+                        <div class="pbody">
+                            <h3>NEXORA</h3>
+                            <p class="psub">AI document question-and-answer workspace</p>
+                            <p class="plain">Upload a PDF, Word or Excel file and ask it questions. Answers stream
+                                back as they're generated and cite the passages they came from.</p>
+                            <ul class="outcomes">
+                                <li>Async FastAPI backend with pgvector retrieval and a Claude/Gemini model gateway</li>
+                                <li>Argon2id password hashing, cookie sessions, CSRF checks and rate limiting</li>
+                                <li>492 backend and 156 front-end tests</li>
+                            </ul>
+                            <p class="tech">FastAPI · PostgreSQL · pgvector · React · TypeScript</p>
+                            <p class="plinks">
+                                <a href="https://github.com/M-Bhargavi8/Nexora" target="_blank" rel="noopener">
+                                    View repository</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" style="--accent:#c8a24a;--o-rec:2;--o-eng:2;--o-cur:1">
+                        <p class="pindex" aria-hidden="true">02</p>
+                        <div class="pbody">
+                            <h3>COGNEXA</h3>
+                            <p class="psub">Cognitive gaming platform</p>
+                            <p class="plain">Eleven browser games. The eight Brain Lab games each measure one
+                                cognitive skill and feed a player's skill profile and the leaderboards.</p>
+                            <ul class="outcomes">
+                                <li>Token-authenticated REST API with role-based access and rate limiting</li>
+                                <li>Game state kept server-side, so a crafted request can't fake a win</li>
+                                <li>210 pytest tests</li>
+                            </ul>
+                            <p class="tech">Python · Flask · SQLAlchemy · pytest</p>
+                            <p class="plinks">
+                                <a href="https://github.com/M-Bhargavi8/COGNEXA" target="_blank" rel="noopener">
+                                    View repository</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" style="--accent:#5c87a0;--o-rec:3;--o-eng:3;--o-cur:3">
+                        <p class="pindex" aria-hidden="true">03</p>
+                        <div class="pbody">
+                            <h3>Climate Vision</h3>
+                            <p class="psub">CNN weather classifier</p>
+                            <p class="plain">My final-year B.Tech project, rebuilt properly. It sorts weather
+                                photographs into Cloudy, Rain, Shine or Sunrise, served through a Streamlit app.</p>
+                            <ul class="outcomes">
+                                <li>Found and fixed a softmax/loss mismatch in the original model</li>
+                                <li>92.9% accuracy on a held-out test set</li>
+                                <li>Model shrunk from 156 MB to 5.5 MB</li>
+                            </ul>
+                            <p class="tech">TensorFlow/Keras · OpenCV · Streamlit</p>
+                            <p class="plinks">
+                                <a href="https://github.com/M-Bhargavi8/ClimateVision" target="_blank" rel="noopener">
+                                    View repository</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- TODO (Bhargavi): fill in what the Resume Scanner does, its stack, the repo URL
+                         and any numbers. Everything marked data-todo is a placeholder. -->
+                    <article class="project reveal" style="--accent:#6d8c6a;--o-rec:4;--o-eng:4;--o-cur:4">
+                        <p class="pindex" aria-hidden="true">04</p>
+                        <div class="pbody">
+                            <h3>AI-Powered Resume Scanner</h3>
+                            <p class="psub" data-todo>One-line description to confirm</p>
+                            <p class="plain" data-todo>Details to confirm — what it parses, how it scores a résumé
+                                against a job description, and what you learned building it.</p>
+                            <ul class="outcomes">
+                                <li data-todo>Outcome to confirm</li>
+                                <li data-todo>Outcome to confirm</li>
+                            </ul>
+                            <p class="tech" data-todo>Stack to confirm</p>
+                            <p class="plinks"><span class="micro" data-todo>Repository link to add</span></p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ───────────────────────── CREDENTIALS ───────────────────────── -->
+        <section id="moments" class="surface-cream" data-nav-tone="dark">
+            <div class="shell">
+                <p class="section-no reveal">(05) — Credentials</p>
+                <h2 class="heading reveal">Training, <em>simulations</em> and certificates.</h2>
+
+                <div class="rail-scroll reveal">
+                    <ul class="moments">
+                        <li class="moment feature">
+                            <p class="micro">Job simulation</p>
+                            <h3>Deloitte Australia — Data Analytics</h3>
+                            <p>A Forage job simulation in data analytics: working through Deloitte's own brief on
+                                data analysis and forensic technology tasks.</p>
+                            <p class="micro when">Feb 2026 · via Forage</p>
+                        </li>
+                        <li class="moment">
+                            <p class="micro">Certification</p>
+                            <h3>Full Stack Data Science with Generative AI, Agentic AI &amp; MERN</h3>
+                            <p class="micro when">Fixity EDX</p>
+                        </li>
+                        <li class="moment">
+                            <p class="micro">Certification</p>
+                            <h3>Use Generative AI for Software Development</h3>
+                            <p class="micro when">IBM</p>
+                        </li>
+                        <li class="moment">
+                            <p class="micro">Certification</p>
+                            <h3>Digital Skills: Artificial Intelligence</h3>
+                            <p class="micro when">Accenture</p>
+                        </li>
+                        <li class="moment">
+                            <p class="micro">Certification</p>
+                            <h3>Basics of Python</h3>
+                            <p class="micro when">Infosys</p>
+                        </li>
                     </ul>
-                    <div class="tags"><span>TensorFlow/Keras</span><span>OpenCV</span><span>Streamlit</span></div>
-                    <a href="https://github.com/M-Bhargavi8/ClimateVision" class="btn" target="_blank" rel="noopener">View on GitHub</a>
-                </article>
-
+                </div>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skill-group">
-                <h3>Languages</h3>
-                <div class="skills"><span>Python</span><span>JavaScript</span><span>TypeScript</span><span>SQL</span><span>HTML5</span><span>CSS3</span></div>
-            </div>
-            <div class="skill-group">
-                <h3>Backend &amp; APIs</h3>
-                <div class="skills"><span>Django</span><span>Django REST Framework</span><span>FastAPI</span><span>Flask</span><span>SQLAlchemy</span><span>Node.js</span><span>Express.js</span><span>REST APIs</span><span>WebSockets</span><span>WebRTC</span><span>JWT</span></div>
-            </div>
-            <div class="skill-group">
-                <h3>Frontend</h3>
-                <div class="skills"><span>React.js</span><span>Tailwind CSS</span><span>Bootstrap</span><span>Vite</span><span>Responsive Web Design</span></div>
-            </div>
-            <div class="skill-group">
-                <h3>Databases</h3>
-                <div class="skills"><span>MySQL</span><span>PostgreSQL</span><span>pgvector</span><span>SQLite</span><span>MongoDB</span><span>Redis</span></div>
-            </div>
-            <div class="skill-group">
-                <h3>Cloud &amp; Tools</h3>
-                <div class="skills"><span>AWS (Elastic Beanstalk, RDS, S3)</span><span>Docker</span><span>Git &amp; GitHub</span><span>pytest</span><span>Vitest</span></div>
-            </div>
-            <div class="skill-group">
-                <h3>AI, ML &amp; Data</h3>
-                <div class="skills"><span>TensorFlow/Keras</span><span>scikit-learn</span><span>OpenCV</span><span>Deep Learning</span><span>NLP</span><span>RAG</span><span>LLM APIs</span><span>Pandas</span><span>NumPy</span></div>
+        <!-- ───────────────────────── EDUCATION ───────────────────────── -->
+        <section id="education" class="surface-paper" data-nav-tone="dark">
+            <div class="shell">
+                <p class="section-no reveal">(06) — Education</p>
+                <div class="edu reveal">
+                    <p class="years">May 2026</p>
+                    <div>
+                        <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
+                        <p class="org">Megha Institute of Engineering and Technology for Women, Hyderabad</p>
+                        <p class="micro">CGPA 8.2 / 10</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="education">
-            <h2>Education</h2>
-            <div class="role-head">
-                <h3>B.Tech, Artificial Intelligence &amp; Data Science</h3>
-                <span class="date">May 2026</span>
-            </div>
-            <p class="muted">Megha Institute of Engineering and Technology for Women, Hyderabad · CGPA 8.2/10</p>
+        <!-- ───────────────────────── CONTACT ───────────────────────── -->
+        <section id="contact" class="surface-ink" data-nav-tone="light">
+            <div class="shell">
+                <p class="section-no reveal">(07) — Contact</p>
+                <h2 class="statement">
+                    <span class="line"><span class="word">Let's build</span></span>
+                    <span class="line"><span class="word"><em>something</em>.</span></span>
+                </h2>
 
-            <h2 class="sub-heading">Certifications</h2>
-            <ul>
-                <li>Full Stack Data Science with Generative AI, Agentic AI &amp; MERN Stack: Fixity EDX</li>
-                <li>Use Generative AI for Software Development: IBM</li>
-                <li>Digital Skills: Artificial Intelligence: Accenture</li>
-                <li>Data Analytics Job Simulation: Deloitte Australia (Forage), Feb 2026</li>
-                <li>Basics of Python: Infosys</li>
-            </ul>
-        </section>
+                <p class="lead reveal">
+                    I'm open to Software Developer, Python Full Stack, Backend and Data Analyst roles.
+                </p>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>I'm open to Software Developer, Python Full Stack and Backend Developer roles.</p>
-            <div class="hero-links">
-                <a href="mailto:bhargavimudumbha@gmail.com" class="btn">Email me</a>
-                <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn btn-outline" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/M-Bhargavi8" class="btn btn-outline" target="_blank" rel="noopener">GitHub</a>
+                <a class="mailto reveal" href="mailto:bhargavimudumbha@gmail.com">bhargavimudumbha@gmail.com</a>
+
+                <div class="actions reveal">
+                    <a href="https://www.linkedin.com/in/bhargavi-mudumbha" class="btn" target="_blank"
+                        rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/M-Bhargavi8" class="btn" target="_blank" rel="noopener">GitHub</a>
+                    <a href="assets/Bhargavi_Mudumbha_Resume.pdf" class="btn" download>Résumé</a>
+                </div>
             </div>
-            <p class="muted">bhargavimudumbha@gmail.com</p>
+
+            <footer class="shell">
+                <p class="micro">© <span id="year">2026</span> Bhargavi Mudumbha</p>
+                <p class="micro">Hyderabad <span id="clock" aria-hidden="true"></span></p>
+            </footer>
         </section>
 
     </main>
 
-    <footer>
-        <p>© 2026 Bhargavi Mudumbha</p>
-    </footer>
-
-    <script>
-        const root = document.documentElement;
-        const button = document.querySelector(".theme-btn");
-
-        function currentTheme() {
-            if (root.dataset.theme) return root.dataset.theme;
-            return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-        }
-
-        function showIcon() {
-            // The icon shows the theme you'd switch TO.
-            button.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
-        }
-
-        button.addEventListener("click", () => {
-            const next = currentTheme() === "dark" ? "light" : "dark";
-            root.dataset.theme = next;
-            try { localStorage.setItem("theme", next); } catch (e) { /* not saved; still switches */ }
-            showIcon();
-        });
-
-        showIcon();
-
-        // Small screens: the links collapse behind the menu button.
-        const navToggle = document.querySelector(".nav-toggle");
-        const navLinks = document.getElementById("nav-links");
-
-        function closeNav() {
-            navLinks.classList.remove("open");
-            navToggle.setAttribute("aria-expanded", "false");
-        }
-
-        navToggle.addEventListener("click", () => {
-            const open = navLinks.classList.toggle("open");
-            navToggle.setAttribute("aria-expanded", String(open));
-        });
-
-        navLinks.addEventListener("click", (e) => {
-            if (e.target.tagName === "A") closeNav();
-        });
-
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") closeNav();
-        });
-    </script>
-
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
